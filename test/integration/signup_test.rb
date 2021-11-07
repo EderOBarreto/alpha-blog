@@ -18,7 +18,7 @@ class SignupTest < ActionDispatch::IntegrationTest
     assert_match "Listing all articles", response.body
   end
 
-  test "get into signup form and reject empty form" do
+  test "get into signup form and reject empty form submission" do
     get "/signup"
     assert_response :success
     assert_no_difference "User.count" do
